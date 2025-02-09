@@ -31,3 +31,8 @@ corpus = ' '.join(ds['text'])
 tn = Tokenizer()
 
 tn.train(corpus=corpus[:1000000], vocab_size=7000)
+```
+
+
+
+
