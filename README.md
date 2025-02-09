@@ -7,5 +7,7 @@ https://huggingface.co/learn/nlp-course/en/chapter6/5 if you want to know more a
 about tokenization
 
 ## Files
+- src/tn.py: Code of the tokenizer
+- src/tn_fn.py: Externak functions used by the tokenizer, there are two functions `get_pairs()` and `merge()` that are the two main functions of the BPE algorithm
 
 ## How to use it
