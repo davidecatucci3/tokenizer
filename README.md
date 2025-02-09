@@ -7,14 +7,14 @@ https://huggingface.co/learn/nlp-course/en/chapter6/5 if you want to know more a
 about tokenization
 
 ## Files
-### src
-- src/tn.py: Code of the tokenizer
-- src/tn_fn.py: External functions used by the tokenizer, there are two functions `get_pairs()` and `merge()` that are the two functions that make works the BPE algorithm
+### src/
+- tn.py: Code of the tokenizer
+- tn_fn.py: External functions used by the tokenizer, there are two functions `get_pairs()` and `merge()` that are the two functions that make works the BPE algorithm
 
-### test
-- test/compare.py: Used during the developing process to make sure that my tokenizer was working as well as the hugging face tokenizer (that it's a famous tokenizer library)
+### test/
+- compare.py: Used during the developing process to make sure that my tokenizer was working as well as the hugging face tokenizer (that it's a famous tokenizer library)
 
-### tokenizer save
-- tokenizer save: folder where the tokenizer data are saved after calling the function `tn.save()`, there is also the function `tn.load()` in case you want load a saved tokenizer
+### tokenizer save/
+folder where the tokenizer data are saved after calling the function `tn.save()`, there is also the function `tn.load()` in case you want load a saved tokenizer
   
 ## How to use it
