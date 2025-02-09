@@ -19,7 +19,7 @@ folder where the tokenizer data are saved after calling the function `tn.save()`
   
 ## How to use it
 ### train tokenizer
-```
+```python
 from tn import Tokenizer
 
 # import ds
