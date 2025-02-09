@@ -76,11 +76,6 @@ seq_back = tn.decode(ids)
 ```python
 from tn import Tokenizer
 
-# import ds
-ds = load_dataset('wikitext', name='wikitext-2-raw-v1', split='train')
-
-corpus = ' '.join(ds['text'])
-
 tn = Tokenizer()
 
 # set special ids
