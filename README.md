@@ -18,3 +18,16 @@ about tokenization
 folder where the tokenizer data are saved after calling the function `tn.save()`, there is also the function `tn.load()` in case you want load a saved tokenizer
   
 ## How to use it
+### train tokenizer
+```
+from tn import Tokenizer
+
+# import ds
+ds = load_dataset('wikitext', name='wikitext-2-raw-v1', split='train')
+
+corpus = ' '.join(ds['text'])
+
+# train ids
+tn = Tokenizer()
+
+tn.train(corpus=corpus[:1000000], vocab_size=7000)
