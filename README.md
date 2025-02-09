@@ -22,14 +22,14 @@ folder where the tokenizer data are saved after calling the function `tn.save()`
 ### train tokenizer
 ```python
 from datasets import load_dataset
-from tn import Tokenizer
+from tn import MyTokenizer
 
 # import ds
 ds = load_dataset('wikitext', name='wikitext-2-raw-v1', split='train')
 
 corpus = ' '.join(ds['text'])
 
-tn = Tokenizer()
+tn = MyTokenizer()
 
 # train tokenizer
 tn.train(corpus=corpus[:1000000], vocab_size=7000)
@@ -38,14 +38,14 @@ tn.train(corpus=corpus[:1000000], vocab_size=7000)
 ### save tokenizer
 ```python
 from datasets import load_dataset
-from tn import Tokenizer
+from tn import MyTokenizer
 
 # import ds
 ds = load_dataset('wikitext', name='wikitext-2-raw-v1', split='train')
 
 corpus = ' '.join(ds['text'])
 
-tn = Tokenizer()
+tn = MyTokenizer()
 
 # train tokenizer
 tn.train(corpus=corpus[:1000000], vocab_size=7000)
@@ -56,12 +56,10 @@ tn.save('my_tokenizer')
 
 ### load, encode and decode
 ```python
-from tn import Tokenizer
-
-tn = Tokenizer()
+from tn import MyTokenizer
 
 # load tokenizer
-tn.load('my_tokenizer')
+tn = MyTokenizer.load('my_tokenizer')
 
 # encode
 seq = 'The square root of 4 is 2, right?'
@@ -74,9 +72,9 @@ seq_back = tn.decode(ids)
 
 ### special ids (tokens)
 ```python
-from tn import Tokenizer
+from tn import MyTokenizer
 
-tn = Tokenizer()
+tn = MyTokenizer()
 
 # set special ids
 tn.set_special_ids(['<|im_start|>'])
