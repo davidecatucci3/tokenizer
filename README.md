@@ -33,6 +33,16 @@ tn = Tokenizer()
 tn.train(corpus=corpus[:1000000], vocab_size=7000)
 ```
 
+### save
+```python
+from tn import Tokenizer
 
+# train ids
+tn = Tokenizer()
 
+tn.train(corpus=corpus[:1000000], vocab_size=7000)
+
+# save tokenizer
+tn.save('my_tokenizer')
+```
 
