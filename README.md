@@ -21,6 +21,7 @@ folder where the tokenizer data are saved after calling the function `tn.save()`
 ⚠️ **Important:** Before running the code rember to install the needed packages, so run this command: `pip install datasets`
 ### train tokenizer
 ```python
+from datasets import load_dataset
 from tn import Tokenizer
 
 # import ds
@@ -36,6 +37,7 @@ tn.train(corpus=corpus[:1000000], vocab_size=7000)
 
 ### save tokenizer
 ```python
+from datasets import load_dataset
 from tn import Tokenizer
 
 # import ds
