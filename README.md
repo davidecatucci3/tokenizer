@@ -87,6 +87,6 @@ tn.train(corpus=corpus[:1000000], vocab_size=7000)
 # encode
 seq = '<|im_start|> The square root of 4 is 2, right?'
 
-ids = tn.encode(seq) # ids_str: ['<|im_start|>', ' The', ' square, ' root',  ' of',  ' 4',  ' is', ' 2', 'right', ' ?']
+ids = tn.encode(seq)
 ```
 
