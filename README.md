@@ -81,7 +81,7 @@ corpus = ' '.join(ds['text'])
 tn = Tokenizer()
 
 # set special ids
-tn.special_ids = ['<|im_start|>']
+tn.set_special_ids(['<|im_start|>'])
 
 # train tokenizer
 tn.train(corpus=corpus[:1000000], vocab_size=7000)
