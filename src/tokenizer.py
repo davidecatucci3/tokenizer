@@ -60,19 +60,24 @@ class MyTokenizer:
             json.dump(json_merges, f1)
             json.dump(self.vocab, f2)
 
-    def load(self, file_name: str) -> None:
+    @classmethod
+    def load(cls, file_name: str) -> None:
         '''
         load a saved tokenizer
         '''
 
         with open(file_name + '-merges' + '.json') as f1, open(file_name + '-vocab' + '.json') as f2:
             json_merges = json.load(f1)
-            self.merges = {(int(k.split(',')[0][1:]), int(k.split(',')[1][1:-1])) : v for k, v in json_merges.items()}
+            merges = {(int(k.split(',')[0][1:]), int(k.split(',')[1][1:-1])) : v for k, v in json_merges.items()}
      
             json_vocab = json.load(f2)
-            self.vocab = self.build_vocab(loaded=(True, json_vocab))
         
-        return MyTokenizer()
+        tn = cls()
+
+        tn.merges = merges
+        tn.vocab = tn.build_vocab(loaded=(True, json_vocab))
+
+        return tn
 
     def train(self, corpus: str, vocab_size: int, test_seq: str = False) -> None:
         '''
