@@ -8,8 +8,8 @@ about tokenization
 
 ## Files
 ### src
-- tn.py: Code of the tokenizer
-- tn_fn.py: External functions used by the tokenizer, there are two functions `get_pairs()` and `merge()` that are the two functions that make works the BPE algorithm
+- tokenizer.py: Code of the tokenizer
+- bpe.py: Implementation of the BPE algorithm, there are two functions `get_pairs()` and `merge()` 
 
 ### test
 - compare.py: Used during the developing process to make sure that my tokenizer was working as well as the hugging face tokenizer (that it's a famous tokenizer library)
