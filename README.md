@@ -27,9 +27,9 @@ ds = load_dataset('wikitext', name='wikitext-2-raw-v1', split='train')
 
 corpus = ' '.join(ds['text'])
 
-# train ids
 tn = Tokenizer()
 
+# train tokenizer
 tn.train(corpus=corpus[:1000000], vocab_size=7000)
 ```
 
@@ -37,9 +37,14 @@ tn.train(corpus=corpus[:1000000], vocab_size=7000)
 ```python
 from tn import Tokenizer
 
-# train ids
+# import ds
+ds = load_dataset('wikitext', name='wikitext-2-raw-v1', split='train')
+
+corpus = ' '.join(ds['text'])
+
 tn = Tokenizer()
 
+# train tokenizer
 tn.train(corpus=corpus[:1000000], vocab_size=7000)
 
 # save tokenizer
@@ -50,7 +55,6 @@ tn.save('my_tokenizer')
 ```python
 from tn import Tokenizer
 
-# train ids
 tn = Tokenizer()
 
 # load tokenizer
@@ -63,5 +67,28 @@ ids = tn.encode(seq)
 
 # decode
 seq_back = tn.decode(ids)
+```
+
+### special ids (tokens)
+```python
+from tn import Tokenizer
+
+# import ds
+ds = load_dataset('wikitext', name='wikitext-2-raw-v1', split='train')
+
+corpus = ' '.join(ds['text'])
+
+tn = Tokenizer()
+
+# set special ids
+tn.special_ids = ['<|im_start|>']
+
+# train tokenizer
+tn.train(corpus=corpus[:1000000], vocab_size=7000)
+
+# encode
+seq = '<|im_start|> The square root of 4 is 2, right?'
+
+ids = tn.encode(seq) # ids_str: ['<|im_start|>', ' The', ' square, ' root',  ' of',  ' 4',  ' is', ' 2', 'right', ' ?']
 ```
 
