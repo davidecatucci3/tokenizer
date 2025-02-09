@@ -1,7 +1,7 @@
 import regex as re
 import json
 
-from tn_fn import get_pairs, merge
+from bpe import get_pairs, merge
 
 # create tokenizer
 class MyTokenizer:
