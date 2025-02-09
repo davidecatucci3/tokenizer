@@ -33,7 +33,7 @@ tn = Tokenizer()
 tn.train(corpus=corpus[:1000000], vocab_size=7000)
 ```
 
-### save
+### save tokenizer
 ```python
 from tn import Tokenizer
 
@@ -44,5 +44,24 @@ tn.train(corpus=corpus[:1000000], vocab_size=7000)
 
 # save tokenizer
 tn.save('my_tokenizer')
+```
+
+### load, encode and decode
+```python
+from tn import Tokenizer
+
+# train ids
+tn = Tokenizer()
+
+# load tokenizer
+tn.load('my_tokenizer')
+
+# encode
+seq = 'The square root of 4 is 2, right?'
+
+ids = tn.encode(seq)
+
+# decode
+seq_back = tn.decode(ids)
 ```
 
