@@ -18,6 +18,7 @@ about tokenization
 folder where the tokenizer data are saved after calling the function `tn.save()`, there is also the function `tn.load()` in case you want load a saved tokenizer
   
 ## How to use it
+⚠️ **Important:** Before running the code rember to install the needed packages, so run this command: `pip install datasets`
 ### train tokenizer
 ```python
 from tn import Tokenizer
