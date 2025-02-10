@@ -188,9 +188,8 @@ class MyTokenizer:
         given a list of tokens ids=[1, 34, 23] -> I am tall
         '''
 
-        seq_bytes = b''.join([self.vocab[id] for id in ids])
-        seq = seq_bytes.decode('utf-8', errors='replace')
-
+        seq = ''.join([self.vocab[id] for id in ids])
+        
         return seq
 
 tn = MyTokenizer()
