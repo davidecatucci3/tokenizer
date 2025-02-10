@@ -1,4 +1,6 @@
 # Tokenizer
+
+## Introduction
 ⚠️ **Important:** This is not a a "competitive" tokenizer (a tokenizer similar to the one used by the state-of-the-arte models) 
 it's a basic tokenizer build it to show the basic structure of a tokenizer
 
